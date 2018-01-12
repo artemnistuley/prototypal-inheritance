@@ -1,5 +1,26 @@
 # Prototypal Inheritance in JavaScript
 
+### Example 1
+```JavaScript
+const person = {
+    firstName: 'Vasya',
+    lastName: 'Pupkin',
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+};
+
+const singer = {
+    firstName: 'Thom',
+    lastName: 'Yorke',
+};
+
+singer.__proto__ = person;
+
+person.getFullName(); // Vasya Pupkin
+singer.getFullName(); // Thom Yorke
+```
+
 ### Example
 ```JavaScript
 const Person = function(firstName, lastName) {
