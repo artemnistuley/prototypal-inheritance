@@ -78,13 +78,13 @@ Person.prototype.getFullName = function() {
     return `${this.firstName} ${this.lastName}`;
 };
 
-Person.prototype.sayYay = function() {
+Person.prototype.sayHi = function() {
     return `${this.firstName} ${this.lastName} said hi!`;
 };
 
 let person = new Person('Vasya', 'Pupkin');
 person.getFullName(); // Vasya Pupkin
-person.sayYay(); // Vasya Pupkin said hi!
+person.sayHi(); // Vasya Pupkin said hi!
 ```
 
 ### Example 5
