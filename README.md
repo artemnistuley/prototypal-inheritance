@@ -43,6 +43,30 @@ person.getFullName(); // Vasya Pupkin
 singer.getFullName(); // Thom Yorke
 ```
 
+### Example 3
+```javascript
+const person = {
+    firstName: 'Vasya',
+    lastName: 'Pupkin',
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+};
+
+const Singer = function(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+};
+
+Singer.prototype = person;
+Singer.prototype.constructor = Singer;
+
+let singer = new Singer("Thom", "Yorke");
+
+person.getFullName(); // Vasya Pupkin
+singer.getFullName(); // Thom Yorke
+```
+
 ### Example
 ```javascript
 const Person = function(firstName, lastName) {
