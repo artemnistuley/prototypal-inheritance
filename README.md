@@ -2,7 +2,7 @@
 
 ### Example
 
-```Javascript
+```javascript
 const Person = {
 	constructor(firstName, lastName) {
 		this.firstName = firstName;
