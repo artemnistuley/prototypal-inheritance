@@ -1,6 +1,7 @@
 # Prototypal Inheritance in JavaScript
 
 ### Example
+
 ```Javascript
 const Person = {
 	constructor(firstName, lastName) {
