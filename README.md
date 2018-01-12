@@ -1,7 +1,7 @@
 # Prototypal Inheritance in JavaScript
 
 ### Example 1
-```JavaScript
+```javascript
 const person = {
     firstName: 'Vasya',
     lastName: 'Pupkin',
@@ -21,8 +21,30 @@ person.getFullName(); // Vasya Pupkin
 singer.getFullName(); // Thom Yorke
 ```
 
+### Example 2
+```javascript
+const person = {
+	firstName: 'Vasya',
+	lastName: 'Pupkin',
+	getFullName() {
+		return `${this.firstName} ${this.lastName}`;
+	}
+};
+
+const Singer = function(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.__proto__ = person;
+};
+
+let singer = new Singer('Thom', 'Yorke');
+
+person.getFullName(); // Vasya Pupkin
+singer.getFullName(); // Thom Yorke
+```
+
 ### Example
-```JavaScript
+```javascript
 const Person = function(firstName, lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -72,7 +94,7 @@ console.log( singer.constructor === Singer.prototype.constructor ); // true
 ```
 
 ### Example
-```JavaScript
+```javascript
 const Person = {
     constructor(firstName, lastName) {
         this.firstName = firstName;
