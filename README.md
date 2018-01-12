@@ -1,2 +1,1 @@
-# prototypal-inheritance
-Prototypal Inheritance in JavaScript
+# Prototypal Inheritance in JavaScript
