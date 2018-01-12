@@ -31,23 +31,23 @@ person.getFullName(); // Vasya Pupkin
 let person2 = new person.constructor('John','Doe');
 person2.getFullName(); // John Doe
 
-console.log(person instanceof Person); // true
-console.log(person.__proto__ === Person.prototype); // true
-console.log(Person.prototype.isPrototypeOf(person)); // true
-console.log(Object.getPrototypeOf(person) === Person.prototype); // true
-console.log(person.constructor === Person.prototype.constructor); // true
+console.log( person instanceof Person ); // true
+console.log( person.__proto__ === Person.prototype ); // true
+console.log( Person.prototype.isPrototypeOf(person) ); // true
+console.log( Object.getPrototypeOf(person) === Person.prototype ); // true
+console.log( person.constructor === Person.prototype.constructor ); // true
 
 let singer = new Singer('Thom', 'Yorke', 'Radiohead');
 singer.getFullName(); // Thom Yorke
 singer.getBandName(); // Radiohead
 
-console.log(singer instanceof Person); // true
-console.log(singer instanceof Singer); // true
-console.log(singer.__proto__ === Singer.prototype); // true
-console.log(singer.__proto__.__proto__ === Person.prototype); // true
-console.log(Singer.prototype.isPrototypeOf(singer)); // true
-console.log(Object.getPrototypeOf(singer) === Singer.prototype); // true
-console.log(singer.constructor === Singer.prototype.constructor); // true
+console.log( singer instanceof Person ); // true
+console.log( singer instanceof Singer ); // true
+console.log( singer.__proto__ === Singer.prototype ); // true
+console.log( singer.__proto__.__proto__ === Person.prototype ); // true
+console.log( Singer.prototype.isPrototypeOf(singer) ); // true
+console.log( Object.getPrototypeOf(singer) === Singer.prototype ); // true
+console.log( singer.constructor === Singer.prototype.constructor ); // true
 ```
 
 ### Example
