@@ -24,11 +24,11 @@ singer.getFullName(); // Thom Yorke
 ### Example 2
 ```javascript
 const person = {
-	firstName: 'Vasya',
-	lastName: 'Pupkin',
-	getFullName() {
-		return `${this.firstName} ${this.lastName}`;
-	}
+    firstName: 'Vasya',
+    lastName: 'Pupkin',
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
 };
 
 const Singer = function(firstName, lastName) {
