@@ -173,6 +173,46 @@ singer.getBandName(); // Radiohead
 
 ### Example 7
 ```javascript
+const Person = {
+    constructor(firstName, lastName){
+        let person = Object.create(Person.prototype);
+        person.firstName = firstName;
+        person.lastName = lastName;
+        return person;
+    },
+    prototype: {
+        getFullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+    }
+};
+
+const Singer = {
+    constructor(firstName, lastName, bandName){
+        let proto = Object.assign(Object.create(Person.prototype), Singer.prototype);
+        let singer = Object.create(proto);
+        singer.firstName = firstName;
+        singer.lastName = lastName;
+        singer.bandName = bandName;
+        return singer;
+    },
+    prototype: {
+        getBandName(){
+          return this.bandName;
+        }
+    }
+};
+
+let person = Person.constructor('Vasya', 'Pupkin');
+person.getFullName(); // Vasya Pupkin
+
+let singer = Singer.constructor('Thom', 'Yorke', 'Radiohead');
+singer.getFullName(); // Thom Yorke
+singer.getBandName(); // Radiohead
+```
+
+### Example 8
+```javascript
 class Person {
     constructor(firstName, lastName) {
         this.firstName = firstName;
