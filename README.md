@@ -143,6 +143,7 @@ const Person = {
     constructor(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+        // or [this.firstName, this.lastName] = arguments;
         return this;
     },
     getFullName() {
@@ -176,8 +177,8 @@ singer.getBandName(); // Radiohead
 const Person = {
     constructor(firstName, lastName){
         let person = Object.create(Person.prototype);
-        person.firstName = firstName;
-        person.lastName = lastName;
+        [person.firstName,
+         person.lastName] = arguments;
         return person;
     },
     prototype: {
@@ -191,9 +192,9 @@ const Singer = {
     constructor(firstName, lastName, bandName){
         let proto = Object.assign(Object.create(Person.prototype), Singer.prototype);
         let singer = Object.create(proto);
-        singer.firstName = firstName;
-        singer.lastName = lastName;
-        singer.bandName = bandName;
+        [singer.firstName,
+         singer.lastName,
+         singer.bandName] = arguments;
         return singer;
     },
     prototype: {
@@ -215,8 +216,8 @@ singer.getBandName(); // Radiohead
 ```javascript
 const Person =  function(firstName, lastName){
     let person = Object.create(Person.prototype);
-    person.firstName = firstName;
-    person.lastName = lastName;
+    [person.firstName,
+     person.lastName] = arguments;
     return person;
 }
 
@@ -227,9 +228,9 @@ Person.prototype.getFullName = function() {
 const Singer = function(firstName, lastName, bandName){
     let proto = Object.assign(Object.create(Person.prototype), Singer.prototype);
     let singer = Object.create(proto);
-    singer.firstName = firstName;
-    singer.lastName = lastName;
-    singer.bandName = bandName;
+    [singer.firstName,
+     singer.lastName,
+     singer.bandName] = arguments;
     return singer;
 }
 
