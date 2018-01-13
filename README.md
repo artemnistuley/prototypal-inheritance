@@ -170,3 +170,76 @@ let singer = Object.create(Singer).constructor('Thom', 'Yorke', 'Radiohead');
 singer.getFullName(); // Thom Yorke
 singer.getBandName(); // Radiohead
 ```
+
+### Example 7
+```javascript
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+
+    set fullName(newFullName) {
+        [this.firstName, this.lastName] = newFullName.split(' ');
+    }
+
+    sayHi() {
+        return `${this.firstName} ${this.lastName} said hi!`;
+    }
+
+    static createDefaultPerson() {
+        return new Person('Default', 'Person');
+    }
+
+    static get constantValue() {
+        return "This is constant value!";
+    }
+}
+
+class Singer extends Person {
+    constructor(firstName, lastName, bandName) {
+        super(firstName, lastName);
+        this.bandName = bandName;
+    }
+
+    sayHi() {
+        return super.sayHi() + ' This is extended method!';
+    }
+
+    getBandName() {
+        return this.bandName;
+    }
+
+    static createDefaultSinger() {
+        return new Singer('Default', 'Singer', 'Unknown Band');
+    }
+}
+
+
+let person = new Person('Vasya', 'Pupkin');
+console.log(person.fullName); // Vasya Pupkin
+
+person.fullName = 'John Doe';
+console.log(person.fullName); // John Doe
+
+person.sayHi(); // John Doe said hi!
+
+let defaultPerson = Person.createDefaultPerson();
+console.log(defaultPerson.fullName); // Default Person
+console.log(Person.constantValue); // This is constant value!
+
+
+let singer = new Singer('Thom', 'Yorke', 'Radiohead');
+console.log(singer.fullName); // Thom Yorke
+
+singer.sayHi();// Thom Yorke said hi! This is extended method!
+singer.getBandName(); // Radiohead
+
+let defaultSinger = Singer.createDefaultSinger();
+console.log(defaultSinger.fullName); // Default Singer
+console.log(Singer.constantValue); // This is constant value!
+```
