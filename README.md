@@ -317,7 +317,7 @@ class Person {
 
 class Singer extends Person {
     constructor(firstName, lastName, bandName) {
-        super(firstName, lastName);
+        super(...arguments);
         this.bandName = bandName;
     }
 
