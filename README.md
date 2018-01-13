@@ -1,5 +1,4 @@
 # Prototypal Inheritance in JavaScript
-## Examples of different ways to implement prototypal inheritance in JavaScript.
 
 ### Example 1
 ```javascript
