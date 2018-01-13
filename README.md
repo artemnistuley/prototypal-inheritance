@@ -32,9 +32,9 @@ const person = {
 };
 
 const Singer = function(firstName, lastName) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.__proto__ = person;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.__proto__ = person;
 };
 
 let singer = new Singer('Thom', 'Yorke');
